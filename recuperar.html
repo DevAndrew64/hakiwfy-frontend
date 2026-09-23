@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recuperar contraseña · Hawkify</title>
+<meta name="theme-color" content="#121a2c">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<script type="module" src="js/paginas/auth.js"></script>
+</head>
+<body data-pagina="recuperar">
+<div id="cabecera"></div>
+
+<main class="auth">
+  <section class="auth-marca">
+    <div>
+      <span class="sobretitulo" style="color:var(--oro)">Recuperar acceso</span>
+      <h2 style="margin-top:16px">Pasa hasta en las<br><em>mejores obras.</em></h2>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>El enlace llega a tu correo y dura 30 minutos.</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Solo funciona una vez; si lo pides de nuevo, el anterior deja de servir.</li>
+      </ul>
+    </div>
+    <p class="cita">Por seguridad no confirmamos si un correo está registrado.</p>
+  </section>
+
+  <section class="auth-form">
+    <div class="caja" id="caja-recuperar">
+      <h1>Recuperar contraseña</h1>
+      <p class="sub">Escribe el correo de tu cuenta y te enviamos un enlace para crear una nueva.</p>
+      <form id="form-recuperar" class="form-pila" novalidate>
+        <div class="campo">
+          <label for="correo">Correo electrónico</label>
+          <input id="correo" name="correo" type="email" autocomplete="email" required placeholder="tu@correo.com">
+          <span class="msg-error"></span>
+        </div>
+        <button class="btn btn-oscuro btn-lg btn-bloque" type="submit">Enviar enlace</button>
+      </form>
+      <p class="alterno"><a class="enlace" href="login.html">Volver a iniciar sesión</a></p>
+    </div>
+  </section>
+</main>
+</body>
+</html>

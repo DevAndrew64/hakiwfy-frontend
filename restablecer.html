@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nueva contraseña · Hawkify</title>
+<meta name="theme-color" content="#121a2c">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<script type="module" src="js/paginas/auth.js"></script>
+</head>
+<body data-pagina="restablecer">
+<div id="cabecera"></div>
+
+<main class="auth">
+  <section class="auth-marca">
+    <div>
+      <span class="sobretitulo" style="color:var(--oro)">Casi listo</span>
+      <h2 style="margin-top:16px">Una contraseña nueva<br><em>y de vuelta a la obra.</em></h2>
+    </div>
+    <p class="cita">Evita reutilizar la contraseña de otros servicios.</p>
+  </section>
+
+  <section class="auth-form">
+    <div class="caja" id="caja-restablecer">
+      <h1>Crea tu nueva contraseña</h1>
+      <p class="sub">Debe tener al menos 8 caracteres y combinar letras y números.</p>
+      <form id="form-restablecer" class="form-pila" novalidate>
+        <div class="campo">
+          <label for="password">Nueva contraseña</label>
+          <div class="campo-contrasena">
+            <input id="password" name="password" type="password" autocomplete="new-password" required>
+            <button type="button"></button>
+          </div>
+          <div class="medidor" id="medidor"><i></i><i></i><i></i><i></i></div>
+          <span class="msg-error"></span>
+        </div>
+        <div class="campo">
+          <label for="confirmar">Repite la contraseña</label>
+          <input id="confirmar" name="confirmar" type="password" autocomplete="new-password" required>
+          <span class="msg-error"></span>
+        </div>
+        <button class="btn btn-oscuro btn-lg btn-bloque" type="submit">Guardar contraseña</button>
+      </form>
+    </div>
+  </section>
+</main>
+</body>
+</html>

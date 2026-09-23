@@ -3,23 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mi cuenta · Hawkify</title>
+<title>Panel de administración · Hawkify</title>
 <meta name="theme-color" content="#121a2c">
+<meta name="robots" content="noindex">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/style.css">
-<script type="module" src="js/paginas/cuenta.js"></script>
+<script type="module" src="js/paginas/admin.js"></script>
 </head>
 <body>
 <div id="cabecera"></div>
 
-<main class="contenedor panel-layout">
+<main class="contenedor panel-layout" style="--ancho:1400px;max-width:1400px">
   <aside class="panel-lateral">
     <div class="panel-perfil" id="panel-perfil"></div>
-    <nav class="nav-panel" id="nav-cuenta" aria-label="Secciones de mi cuenta"></nav>
+    <nav class="nav-panel" id="nav-admin" aria-label="Secciones del panel"></nav>
   </aside>
   <section class="panel-contenido" id="contenido" aria-live="polite"></section>
 </main>
-
-<div id="pie"></div>
 </body>
 </html>

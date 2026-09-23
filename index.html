@@ -3,162 +3,170 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hawkify — Renta de herramientas profesionales</title>
+<title>Hawkify · Alquiler de herramientas por días</title>
+<meta name="description" content="Alquila taladros, sierras, rotomartillos y equipos de obra por días en Barranquilla. Pagas solo los días que usas la herramienta.">
+<meta name="theme-color" content="#121a2c">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/style.css">
+<script type="module" src="js/paginas/inicio.js"></script>
 </head>
 <body>
+<div id="cabecera"></div>
 
-<!-- ================= HEADER ================= -->
-<header class="site-header">
-  <div class="container">
+<main>
+  <section class="hero">
+    <div class="contenedor hero-grid">
+      <div>
+        <span class="sobretitulo" style="color:var(--oro)">Alquiler por días · Barranquilla</span>
+        <h1 style="margin-top:14px">Alquila la herramienta.<span class="resalte">No la compres.</span></h1>
+        <p class="bajada">¿Tiene sentido pagar $450.000 por un taladro percutor para abrir cuatro huecos? Aquí lo tienes por días, revisado y listo para trabajar, y lo devuelves cuando terminas.</p>
 
-    <a href="index.html" class="logo">
-      <span class="logo-mark">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 1 0-5.4 5.4l-6 6 3 3 6-6a4 4 0 0 0 5.4-5.4l-2.1 2.1-2-2z"/></svg>
-      </span>
-      <span>Hawkify</span>
-    </a>
+        <form class="buscador-hero" id="buscador-hero" action="catalogo.html">
+          <label><span>Herramienta</span><input name="q" type="search" placeholder="Rotomartillo, sierra, pulidora…" autocomplete="off"></label>
+          <label><span>Desde</span><input name="desde" type="date"></label>
+          <label><span>Hasta</span><input name="hasta" type="date"></label>
+          <button class="btn btn-lg" type="submit">Buscar</button>
+        </form>
 
-    <div class="header-search">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" placeholder="¿Qué herramienta necesitas hoy?" aria-label="Buscar herramienta">
-    </div>
-
-    <nav class="main-nav">
-      <button class="nav-pill">Renta</button>
-      <a href="#" class="nav-link">Usuarios</a>
-
-      <div class="dropdown-wrap">
-        <button class="nav-link" data-dropdown-toggle="tools-dropdown" aria-haspopup="true">Tipos de Herramienta</button>
-        <div class="dropdown-panel" id="tools-dropdown">
-          <a href="catalogo.html?cat=Construcci%C3%B3n">Construcción</a>
-          <a href="catalogo.html?cat=Carpinter%C3%ADa">Carpintería</a>
-          <a href="catalogo.html?cat=Limpieza">Limpieza</a>
-          <a href="catalogo.html?cat=Herramientas+El%C3%A9ctricas">Herramientas Eléctricas</a>
-          <a href="catalogo.html?cat=Pintura+y+Acabados">Pinturas y Acabados</a>
-        </div>
-      </div>
-    </nav>
-
-    <div class="header-icons">
-      <div class="dropdown-wrap">
-        <button class="icon-btn" data-dropdown-toggle="cart-dropdown" aria-label="Carrito" aria-haspopup="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-          <span class="cart-badge" id="cart-badge">0</span>
-        </button>
-        <div class="dropdown-panel cart-dropdown-panel" id="cart-dropdown">
-          <p class="cart-empty">Tu carrito está vacío.</p>
-        </div>
+        <div class="hero-cifras" id="hero-cifras"></div>
       </div>
 
-      <div class="dropdown-wrap">
-        <button class="icon-btn" data-dropdown-toggle="account-dropdown" aria-label="Cuenta" aria-haspopup="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </button>
-        <div class="dropdown-panel account-panel" id="account-dropdown">
-          <a href="login.html">Iniciar sesión</a>
-          <a href="signup.html">Crear cuenta</a>
-        </div>
+      <div class="hero-visual" id="hero-visual">
+        <div class="hero-foto"><img src="assets/products/rotomartillo-hilti.jpg" alt="Rotomartillo sobre banco de trabajo"></div>
+        <div class="hero-sello">Paga<br>solo los<br>días de uso</div>
       </div>
     </div>
+  </section>
 
-    <div class="header-flex-spacer"></div>
-
-  </div>
-</header>
-
-<!-- ================= HERO ================= -->
-<section class="hero">
-  <div class="container">
-    <h1>¿Listo para construir? Las mejores herramientas te esperan.</h1>
-    <p>Renta por día, con seguros incluidos y entrega confiable. Encuentra el equipo perfecto para tu proyecto.</p>
-    <a href="catalogo.html" class="btn btn-gold">
-      Explorar catálogo
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    </a>
-  </div>
-</section>
-
-<!-- ================= SOBRE NOSOTROS ================= -->
-<section class="about">
-  <div class="container">
-    <h2>Sobre nosotros</h2>
-    <p>Hawkify es la plataforma líder en Colombia para renta de herramientas profesionales — conectando propietarios de equipos de alta gama con constructores, carpinteros y profesionales que necesitan herramientas confiables por día, con seguros incluidos y entrega garantizada.</p>
-  </div>
-</section>
-
-<!-- ================= FILAS POR CATEGORÍA ================= -->
-<section class="container" id="home-rows">
-  <!-- Generado por JavaScript: renderHomeRows() en js/script.js -->
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-
-      <div class="footer-about">
-        <a href="index.html" class="logo">
-          <span class="logo-mark">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 1 0-5.4 5.4l-6 6 3 3 6-6a4 4 0 0 0 5.4-5.4l-2.1 2.1-2-2z"/></svg>
-          </span>
-          <span>Hawkify</span>
-        </a>
-        <p>La plataforma líder en renta de herramientas profesionales en Colombia. Equipos de alta gama, entrega confiable y seguros incluidos.</p>
-        <span class="footer-label" style="margin-top:20px;">Síguenos</span>
-        <div class="social-row">
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1a4.1 4.1 0 0 0-7 3.7A11.6 11.6 0 0 1 3.4 4.6a4.1 4.1 0 0 0 1.3 5.5c-.7 0-1.3-.2-1.9-.5v.1c0 2 1.4 3.6 3.3 4a4.1 4.1 0 0 1-1.9.1c.5 1.7 2.1 2.9 4 3A8.2 8.2 0 0 1 2 18.6a11.6 11.6 0 0 0 6.3 1.8c7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2.1"/></svg></a>
-          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5M3 9h4v12H3zM10 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4z"/></svg></a>
-          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="4"/><polygon points="10 9 15 12 10 15" fill="currentColor" stroke="none"/></svg></a>
+  <section class="seccion" id="como-funciona">
+    <div class="contenedor">
+      <div class="seccion-titulo">
+        <div>
+          <span class="sobretitulo">Cómo funciona</span>
+          <h2 style="margin-top:8px">De la búsqueda a la obra en cuatro pasos</h2>
+        </div>
+        <div class="regla"></div>
+      </div>
+      <div class="pasos">
+        <div class="paso">
+          <span class="numero">01 / Elige</span>
+          <h3>Fechas reales, no promesas</h3>
+          <p>El calendario muestra qué días hay unidades libres. Si está tachado, está ocupado.</p>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+        </div>
+        <div class="paso">
+          <span class="numero">02 / Paga</span>
+          <h3>Tarifa por día, total claro</h3>
+          <p>Ves el desglose antes de confirmar: días × tarifa, más envío si lo pides a domicilio.</p>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 9.5h19M6 15h4"/></svg>
+        </div>
+        <div class="paso">
+          <span class="numero">03 / Trabaja</span>
+          <h3>Recoge o recibe en obra</h3>
+          <p>Cada herramienta sale probada, con su ficha técnica y condiciones de uso.</p>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5h11v9h-11zM13.5 9.5h4l3 3v3h-7z"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
+        </div>
+        <div class="paso">
+          <span class="numero">04 / Devuelve</span>
+          <h3>Califica y ayuda al siguiente</h3>
+          <p>Tras la devolución calificas el equipo. Así el catálogo se mantiene honesto.</p>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.8 2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg>
         </div>
       </div>
-
-      <div class="footer-col">
-        <h4>Links útiles</h4>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="catalogo.html">Catálogo</a></li>
-          <li><a href="#">Cómo funciona</a></li>
-          <li><a href="#">Blog</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Soporte</h4>
-        <ul>
-          <li><a href="#">Centro de ayuda</a></li>
-          <li><a href="#">Contacto</a></li>
-          <li><a href="faq.html">Preguntas frecuentes</a></li>
-          <li><a href="#">Términos</a></li>
-          <li><a href="#">Privacidad</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Contacto</h4>
-        <ul class="footer-contact">
-          <li>contacto@hawkify.co</li>
-          <li>+57 301 234 5678</li>
-          <li>Cra 38 #72-13, Barranquilla, Colombia</li>
-        </ul>
-      </div>
-
     </div>
+  </section>
 
-    <div class="footer-bottom">
-      <span>© 2026 Hawkify S.A.S. Todos los derechos reservados.</span>
-      <div class="legal-links">
-        <a href="#">Términos</a>
-        <a href="#">Privacidad</a>
-        <a href="#">Política de cookies</a>
+  <section class="seccion">
+    <div class="contenedor">
+      <div class="seccion-titulo">
+        <div>
+          <span class="sobretitulo">Categorías</span>
+          <h2 style="margin-top:8px">¿Qué trabajo tienes entre manos?</h2>
+        </div>
+        <a href="catalogo.html" class="btn btn-linea">Ver todo el catálogo</a>
+        <div class="regla"></div>
+      </div>
+      <div class="rejilla-categorias" id="categorias"></div>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <div class="contenedor">
+      <div class="seccion-titulo">
+        <div>
+          <span class="sobretitulo">Mejor calificadas</span>
+          <h2 style="margin-top:8px">Las que más recomiendan quienes ya alquilaron</h2>
+        </div>
+        <div class="regla"></div>
+      </div>
+      <div class="rejilla-fichas" id="destacadas"></div>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <div class="contenedor">
+      <div class="seccion-titulo">
+        <div>
+          <span class="sobretitulo">Haz la cuenta</span>
+          <h2 style="margin-top:8px">Comprar para usar dos días no cuadra</h2>
+        </div>
+        <div class="regla"></div>
+      </div>
+      <div class="comparador" id="comparador">
+        <div class="comprar">
+          <h3>Comprar un rotomartillo profesional</h3>
+          <div class="cifra mono">$1.450.000</div>
+          <ul>
+            <li>Queda guardado el resto del año</li>
+            <li>Mantenimiento, brocas y baterías por tu cuenta</li>
+            <li>Se deprecia aunque no lo uses</li>
+          </ul>
+        </div>
+        <div class="alquilar">
+          <h3>Alquilarlo en Hawkify</h3>
+          <div class="cifra mono" id="cifra-alquiler">$84.000</div>
+          <ul>
+            <li id="texto-ahorro">Ahorras $1.366.000 frente a comprarlo</li>
+            <li>Sale revisado y con sus accesorios</li>
+            <li>Lo devuelves y otra persona lo aprovecha</li>
+          </ul>
+          <div class="control">
+            <span>Días de uso</span>
+            <input type="range" id="dias-uso" min="1" max="15" value="2" aria-label="Días de uso">
+            <strong class="mono" id="dias-uso-valor">2</strong>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </section>
 
-<script src="js/products.js"></script>
-<script src="js/script.js"></script>
+  <section class="seccion">
+    <div class="contenedor">
+      <div class="seccion-titulo">
+        <div>
+          <span class="sobretitulo">Recién llegadas</span>
+          <h2 style="margin-top:8px">Nuevas en el catálogo</h2>
+        </div>
+        <div class="regla"></div>
+      </div>
+      <div class="rejilla-fichas" id="recientes"></div>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <div class="contenedor">
+      <div class="banda-publicar">
+        <div>
+          <span class="sobretitulo" style="color:var(--tinta)">Para propietarios y ferreterías</span>
+          <h2 style="margin-top:8px">¿Tienes herramientas quietas en la bodega?</h2>
+          <p>Publícalas en Hawkify. Un administrador revisa cada ficha antes de salir al catálogo, tú defines la tarifa por día y recibes cada reserva con fechas y datos del cliente.</p>
+        </div>
+        <a class="btn btn-oscuro btn-lg" href="cuenta.html#herramientas">Publicar una herramienta</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="pie"></div>
 </body>
 </html>
