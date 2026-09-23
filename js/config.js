@@ -17,11 +17,17 @@ function leerOverride() {
 
 const esLocal = ['localhost', '127.0.0.1'].includes(location.hostname);
 
-export const API_URL = (
+/** Acepta la URL con o sin "/" final y con o sin "/api": todas las rutas del backend cuelgan de /api. */
+function normalizar(url) {
+  const base = url.trim().replace(/\/+$/, '');
+  return base.endsWith('/api') ? base : `${base}/api`;
+}
+
+export const API_URL = normalizar(
   leerOverride()
   || window.HAWKIFY_API_URL
-  || (esLocal ? 'http://localhost:8080/api' : API_PRODUCCION)
-).replace(/\/$/, '');
+  || (esLocal ? 'http://localhost:8080/api' : API_PRODUCCION),
+);
 
 /** Cuentas de demostración que siembra el backend (DemoSeeder). Solo se muestran en localhost. */
 export const CUENTAS_DEMO = [
