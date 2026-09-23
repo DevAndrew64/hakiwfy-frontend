@@ -5,7 +5,7 @@
  * Para probar contra otro servidor sin tocar código, en la consola del navegador:
  *   localStorage.setItem('hawkify_api', 'https://api.tudominio.co/api')
  */
-const API_PRODUCCION = 'https://hawkify-backend.onrender.com/';
+const API_PRODUCCION = 'https://hawkify-backend.onrender.com/api';
 
 function leerOverride() {
   try {
