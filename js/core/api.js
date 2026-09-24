@@ -22,7 +22,47 @@ export function qs(parametros = {}) {
   return s ? `?${s}` : '';
 }
 
-export async function api(ruta, { metodo = 'GET', cuerpo, formData, silencioso401 = false } = {}) {
+// ------------------------------------------------------------------ servidor dormido
+// En planes gratuitos el backend se apaga sin tráfico y tarda en despertar.
+// Si una petición pasa de unos segundos, se avisa en vez de dejar un spinner mudo.
+const ESPERA_AVISO_MS = 4000;
+let pendientes = 0;
+let temporizadorAviso = null;
+
+function mostrarAvisoDespertar() {
+  if (document.getElementById('aviso-despertar')) return;
+  const aviso = document.createElement('div');
+  aviso.id = 'aviso-despertar';
+  aviso.className = 'aviso-despertar';
+  aviso.setAttribute('role', 'status');
+  aviso.innerHTML = '<span class="giro"></span><div><strong>Despertando el servidor…</strong>'
+    + '<span>Tras un rato sin visitas, la primera carga puede tardar hasta un par de minutos. No cierres la página.</span></div>';
+  document.body.appendChild(aviso);
+}
+
+function iniciarEspera() {
+  pendientes += 1;
+  if (!temporizadorAviso) temporizadorAviso = setTimeout(mostrarAvisoDespertar, ESPERA_AVISO_MS);
+}
+
+function terminarEspera() {
+  pendientes = Math.max(0, pendientes - 1);
+  if (pendientes > 0) return;
+  clearTimeout(temporizadorAviso);
+  temporizadorAviso = null;
+  document.getElementById('aviso-despertar')?.remove();
+}
+
+export async function api(ruta, opciones = {}) {
+  iniciarEspera();
+  try {
+    return await peticion(ruta, opciones);
+  } finally {
+    terminarEspera();
+  }
+}
+
+async function peticion(ruta, { metodo = 'GET', cuerpo, formData, silencioso401 = false } = {}) {
   const headers = { Accept: 'application/json' };
   const token = sesion.token();
   if (token) headers.Authorization = `Bearer ${token}`;

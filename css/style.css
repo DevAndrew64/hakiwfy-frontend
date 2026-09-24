@@ -1031,3 +1031,17 @@ a.kpi:hover { border-color: var(--tinta); }
 .boton-deseo-panel.activo svg { fill: currentColor; }
 
 @media (max-width: 1100px) { .panel-contenido .dos-columnas { grid-template-columns: minmax(0, 1fr); } }
+
+/* Aviso cuando el backend gratuito está despertando (ver js/core/api.js) */
+.aviso-despertar {
+  position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 1100;
+  display: flex; gap: 12px; align-items: center; max-width: min(520px, calc(100vw - 32px));
+  background: var(--tinta); color: #fff; padding: 14px 18px; border-radius: var(--r);
+  border-left: 4px solid var(--oro); box-shadow: var(--sombra-3); animation: entrar .22s ease;
+}
+.aviso-despertar strong { display: block; font-size: 14.5px; }
+.aviso-despertar span:not(.giro) { font-size: 13px; color: #c3cbdd; }
+.aviso-despertar .giro {
+  width: 20px; height: 20px; flex-shrink: 0; border-radius: 50%;
+  border: 2.5px solid rgba(255, 255, 255, .25); border-top-color: var(--oro); animation: girar .8s linear infinite;
+}
